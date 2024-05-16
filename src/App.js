@@ -6,8 +6,6 @@ import StudentForm from "./StudentForm"
 function App() {
   return (
     <div className="App">
-      {/* <Counter initialCount={0} />
-      <ItemList /> */}
       <StudentForm />
     </div>
   );

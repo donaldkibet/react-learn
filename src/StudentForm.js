@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./StudentForm.css";
 
 const faculties = ["Medicine", "Arts", "Education", "Engineering"];
 
@@ -10,9 +11,9 @@ function StudentForm() {
     email: "",
   });
 
-  const handleOnChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+  const handleOnChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
     setStudent({
       ...student,
       [name]: value,
@@ -20,13 +21,14 @@ function StudentForm() {
   };
 
   const handleOnRegister = () => {
-    alert(JSON.stringify(student));
+    // alert(JSON.stringify(student));
+    console.log(student);
   };
 
   return (
-    <div>
+    <div className="studentFormContainer">
       <h3>Student Registration Form</h3>
-      <div>
+      <div className="formControl">
         <label>Reg No</label>
         <input
           value={student.regNo}
@@ -35,7 +37,7 @@ function StudentForm() {
           name="regNo"
         />
       </div>
-      <div>
+      <div className="formControl">
         <label>Name</label>
         <input
           value={student.name}
@@ -44,7 +46,7 @@ function StudentForm() {
           name="name"
         />
       </div>
-      <div>
+      <div className="formControl">
         <label>Faculty</label>
         <select
           value={student.faculty}
@@ -59,7 +61,7 @@ function StudentForm() {
           ))}
         </select>
       </div>
-      <div>
+      <div className="formControl">
         <label>Email</label>
         <input
           value={student.email}
@@ -69,7 +71,9 @@ function StudentForm() {
         />
       </div>
       <div>
-        <button onClick={handleOnRegister}>Register</button>
+        <button className="registerButton" onClick={handleOnRegister}>
+          Register
+        </button>
       </div>
     </div>
   );

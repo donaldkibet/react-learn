@@ -1,0 +1,20 @@
+.studentFormContainer{
+    border: 1px solid grey;
+    padding: 16px;
+}
+
+.formControl {
+    display: grid;
+    grid-template-columns: 70px 250px;
+    margin-bottom: 4px;
+}
+
+.registerButton {
+    color: blue;
+    cursor: pointer;
+    border: 1px solid lightblue;
+    font-size: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100px;
+}
