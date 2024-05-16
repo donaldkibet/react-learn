@@ -11,13 +11,22 @@ function ItemList() {
     }
   };
 
+  const removeItem = (itemName) => {
+    const filteredItems = items.filter((item) => item !== itemName);
+    setItems(filteredItems);
+  };
+
   return (
     <div>
       <h2>Item List</h2>
       <ul>
         {items.map((item, index) => (
-          <li style={{ color: index % 2 === 0 ? "grey" : "lightgrey" }} key={index}>
+          <li
+            style={{ color: index % 2 === 0 ? "grey" : "lightgrey" }}
+            key={index}
+          >
             {item}
+            <button onClick={() => removeItem(item)}>Delete</button>
           </li>
         ))}
       </ul>
